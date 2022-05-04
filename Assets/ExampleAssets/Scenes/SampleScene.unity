@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ac32c30efa80e4cb177425dd5abb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arObjectToPlace: {fileID: 5602512435650527265, guid: e5d7ad20f38dc2f44a8c71891a2db2f8,
+  arObjectToPlace: {fileID: 919132149155446097, guid: 2de19e7557b61f44f8a5bf44eaf56ee1,
     type: 3}
   scaleFactor: {x: 0.1, y: 0.1, z: 0.1}
 --- !u!114 &388525037

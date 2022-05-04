@@ -26,9 +26,9 @@ public class TrackedImageInfoMultipleManager : MonoBehaviour
     {
         m_TrackedImageManager = GetComponent<ARTrackedImageManager>();
         
-        GameObject newARObject = Instantiate(arObjectToPlace, Vector3.zero, Quaternion.identity);
-        newARObject.name = arObjectToPlace.name;
-        arObjects.Add(arObjectToPlace.name, newARObject);
+        //GameObject newARObject = Instantiate(arObjectToPlace, Vector3.zero, Quaternion.identity);
+        //newARObject.name = arObjectToPlace.name;
+        //arObjects.Add(arObjectToPlace.name, newARObject);
     }
 
     // begins and ends the image tracking
@@ -64,10 +64,14 @@ public class TrackedImageInfoMultipleManager : MonoBehaviour
         //if the object is not empty it places it on the corresponding location
         if(arObjectToPlace != null)
         {
-            GameObject goARObject = arObjects[name];
-            goARObject.SetActive(true);
-            goARObject.transform.position = newPosition;
-            goARObject.transform.localScale = scaleFactor;
+            GameObject newARObject = Instantiate(arObjectToPlace, newPosition, Quaternion.identity);
+            newARObject.name = arObjectToPlace.name;
+            //arObjects.Add(arObjectToPlace.name, newARObject);
+
+            //GameObject goARObject = arObjects[name];
+            //goARObject.SetActive(true);
+            //goARObject.transform.position = newPosition;
+            newARObject.transform.localScale = scaleFactor;
         }
     }
 }
