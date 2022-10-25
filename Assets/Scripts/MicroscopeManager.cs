@@ -10,6 +10,13 @@ public class MicroscopeManager : MonoBehaviour
     [SerializeField]
     GameObject nanobotPrefab;
     GameObject spawnableObject;
+    GameObject secondSpawnableObject;
+    [SerializeField]
+    GameObject StrandMatchSpawner;
+    [SerializeField]
+    GameObject strandColliderCheck;
+    [SerializeField]
+    GameObject dnaBeatCanvas;
 
     List<ARRaycastHit> m_Hits = new List<ARRaycastHit>();
     Camera arCamera;
@@ -18,6 +25,7 @@ public class MicroscopeManager : MonoBehaviour
     void Start()
     {
         spawnableObject = null;
+        secondSpawnableObject = null;
         arCamera = GameObject.Find("AR Camera").GetComponent<Camera>();
     }
 
@@ -37,7 +45,8 @@ public class MicroscopeManager : MonoBehaviour
                         if (hit.collider.name == "Microscope")
                         {
                             Destroy(hit.collider.gameObject);
-                            SpawnNanobot(m_Hits[0].pose.position);
+                            dnaBeatCanvas.SetActive(true);
+                            SpawnStrandSpawner(m_Hits[0].pose.position);
                         }
                     }
                 }
@@ -46,6 +55,11 @@ public class MicroscopeManager : MonoBehaviour
 
     public void SpawnNanobot(Vector3 spawnPosition){
         spawnableObject = Instantiate(nanobotPrefab, spawnPosition, Quaternion.identity);
+    }
+
+    public void SpawnStrandSpawner(Vector3 spawnPosition){
+        spawnableObject = Instantiate(StrandMatchSpawner, spawnPosition, Quaternion.identity);
+        secondSpawnableObject = Instantiate(strandColliderCheck, new Vector3(spawnPosition.x, spawnPosition.y-1, spawnPosition.z), Quaternion.identity);
     }
 
 
