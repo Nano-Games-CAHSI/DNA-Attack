@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4604732766347351738}
   m_Layer: 0
   m_Name: StrandMatchManager
-  m_TagString: Untagged
+  m_TagString: StrandSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,5 +115,5 @@ MonoBehaviour:
   cytosine: {fileID: 9081820077629933973, guid: 2e7abc9edf9497b41802960ad4116535,
     type: 3}
   guanine: {fileID: 2042839714465420685, guid: 8c08463a9670c6c458ece8b0f03a2f0c, type: 3}
-  slotFill: {fileID: 2272204478365997412, guid: ba45593d6b0b3ce4a9f9e4c0cad09d98,
+  slotFill: {fileID: 5602512435650527265, guid: e5d7ad20f38dc2f44a8c71891a2db2f8,
     type: 3}

@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 6470590306692911192}
   - component: {fileID: 666482565373047099}
   - component: {fileID: 1640783113221881756}
-  - component: {fileID: 1285852547835250300}
   m_Layer: 0
   m_Name: ColliderCheck
-  m_TagString: Untagged
+  m_TagString: StrandCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,20 +97,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1285852547835250300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7321640143910027384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 194f6a805a9c1ce4d9e1ef68ca13618d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  adeine: {fileID: 992524985656273647, guid: ff9a2f8083811914e88f32e7fb5a698e, type: 3}
-  thymine: {fileID: 8626605085495080714, guid: 36f877a0e2a1d1549b3a7be54f4a1dbe, type: 3}
-  cytosine: {fileID: 9081820077629933973, guid: 2e7abc9edf9497b41802960ad4116535,
-    type: 3}
-  guanine: {fileID: 2042839714465420685, guid: 8c08463a9670c6c458ece8b0f03a2f0c, type: 3}

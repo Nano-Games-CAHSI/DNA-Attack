@@ -17,6 +17,8 @@ public class MicroscopeManager : MonoBehaviour
     GameObject strandColliderCheck;
     [SerializeField]
     GameObject dnaBeatCanvas;
+    [SerializeField]
+    GameObject microscope;
 
     List<ARRaycastHit> m_Hits = new List<ARRaycastHit>();
     Camera arCamera;
@@ -46,7 +48,9 @@ public class MicroscopeManager : MonoBehaviour
                         {
                             Destroy(hit.collider.gameObject);
                             dnaBeatCanvas.SetActive(true);
-                            SpawnStrandSpawner(m_Hits[0].pose.position);
+                            //SpawnStrandSpawner(m_Hits[0].pose.position);
+                            Vector3 SpawnerPosition = new Vector3(hit.collider.gameObject.transform.position.x, hit.collider.gameObject.transform.position.y+0.5f, hit.collider.gameObject.transform.position.z);
+                            SpawnStrandSpawner(SpawnerPosition);
                         }
                     }
                 }

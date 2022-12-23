@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5444379458950161752}
   - component: {fileID: 5530853314010387612}
   - component: {fileID: 4018604426884039274}
+  - component: {fileID: -3562927814663441195}
   m_Layer: 0
   m_Name: Cytosine
   m_TagString: Untagged
@@ -110,3 +111,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13350592b850bc54a97346f257def343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3562927814663441195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9081820077629933973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6585fa97e0c29a43b6e199bc52c407a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 3

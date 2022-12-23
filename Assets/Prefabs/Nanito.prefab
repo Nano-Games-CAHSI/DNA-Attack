@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 7392261240825719}
   - component: {fileID: 8943767155018896300}
   - component: {fileID: 507086658826728994}
+  - component: {fileID: 2475577699037707459}
+  - component: {fileID: -8227995620043753090}
   m_Layer: 0
   m_Name: Nanito
-  m_TagString: Untagged
+  m_TagString: Empty
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,3 +112,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13350592b850bc54a97346f257def343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2475577699037707459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5602512435650527265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194f6a805a9c1ce4d9e1ef68ca13618d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adeine: {fileID: 992524985656273647, guid: ff9a2f8083811914e88f32e7fb5a698e, type: 3}
+  thymine: {fileID: 8626605085495080714, guid: 36f877a0e2a1d1549b3a7be54f4a1dbe, type: 3}
+  cytosine: {fileID: 9081820077629933973, guid: 2e7abc9edf9497b41802960ad4116535,
+    type: 3}
+  guanine: {fileID: 2042839714465420685, guid: 8c08463a9670c6c458ece8b0f03a2f0c, type: 3}
+  range: 0.01
+--- !u!114 &-8227995620043753090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5602512435650527265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6585fa97e0c29a43b6e199bc52c407a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 3

@@ -13,7 +13,7 @@ public class StrandMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        InvokeRepeating("ChangePosition", 0, 1);
+        InvokeRepeating("ChangePosition", 0, 0);
     }
 
     void ChangePosition () {

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6044062121719496117}
   - component: {fileID: 4015248881749985308}
   - component: {fileID: 4924804162631544864}
+  - component: {fileID: 4969464362048125999}
   m_Layer: 0
   m_Name: Adeine
   m_TagString: Untagged
@@ -110,3 +111,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13350592b850bc54a97346f257def343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4969464362048125999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992524985656273647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6585fa97e0c29a43b6e199bc52c407a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 3

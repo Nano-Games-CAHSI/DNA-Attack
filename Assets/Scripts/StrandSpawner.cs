@@ -21,6 +21,7 @@ public class StrandSpawner : MonoBehaviour
     GameObject SpawnableObjectTwo;
 
     int frameCount;
+    int strandCount;
 
     // Start is called before the first frame update
     void Start()
@@ -66,6 +67,7 @@ public class StrandSpawner : MonoBehaviour
         dividedStrands.Add(EG);
 
         frameCount = 0;
+        strandCount = 0;
     }
 
     // Update is called once per frame
@@ -73,12 +75,22 @@ public class StrandSpawner : MonoBehaviour
     {
        if(frameCount==30)
        {
-        SpawnStrandDivide(transform.position, dividedStrands[Random.Range(0, dividedStrands.Count)]);
+        if(strandCount<20)
+        {
+            SpawnStrandDivide(transform.position, dividedStrands[Random.Range(0, dividedStrands.Count)]);
+        }
         frameCount=0;
+        strandCount++;
        } 
        else
        {
         frameCount++;
+       }
+
+       if(strandCount == 22) 
+       {
+        Destroy(GameObject.FindWithTag("StrandSpawner"));
+        Destroy(GameObject.FindWithTag("StrandCollider"));
        }
     }
 
