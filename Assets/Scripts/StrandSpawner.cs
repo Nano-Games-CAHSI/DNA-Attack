@@ -26,41 +26,49 @@ public class StrandSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //creates the list of adeine and empty strand combination and adds it to the dividedStrands list
         List<GameObject> AE = new List<GameObject>();
         AE.Add(adeine);
         AE.Add(slotFill);
         dividedStrands.Add(AE);
 
+        //creates the list of adeine and empty strand combination and adds it to the dividedStrands list
         List<GameObject> EA = new List<GameObject>();
         EA.Add(slotFill);
         EA.Add(adeine);
         dividedStrands.Add(EA);
 
+        //creates the list of thymine and empty strand combination and adds it to the dividedStrands list
         List<GameObject> TE = new List<GameObject>();
         TE.Add(thymine);
         TE.Add(slotFill);
         dividedStrands.Add(TE);
 
+        //creates the list of thymine and empty strand combination and adds it to the dividedStrands list
         List<GameObject> ET = new List<GameObject>();
         ET.Add(slotFill);
         ET.Add(thymine);
         dividedStrands.Add(ET);
 
+        //creates the list of cytosine and empty strand combination and adds it to the dividedStrands list
         List<GameObject> CE = new List<GameObject>();
         CE.Add(cytosine);
         CE.Add(slotFill);
         dividedStrands.Add(CE);
 
+        //creates the list of cytosine and empty strand combination and adds it to the dividedStrands list
         List<GameObject> EC = new List<GameObject>();
         EC.Add(slotFill);
         EC.Add(cytosine);
         dividedStrands.Add(EC);
 
+        //creates the list of guanine and empty strand combination and adds it to the dividedStrands list
         List<GameObject> GE = new List<GameObject>();
         GE.Add(guanine);
         GE.Add(slotFill);
         dividedStrands.Add(GE);
 
+        //creates the list of guanine and empty strand combination and adds it to the dividedStrands list
         List<GameObject> EG = new List<GameObject>();
         EG.Add(slotFill);
         EG.Add(guanine);
@@ -75,6 +83,7 @@ public class StrandSpawner : MonoBehaviour
     {
        if(frameCount==30)
        {
+        //if less than 20 strands have been spawned keeps spawning strand combinations at random
         if(strandCount<20)
         {
             SpawnStrandDivide(transform.position, dividedStrands[Random.Range(0, dividedStrands.Count)]);
@@ -84,9 +93,11 @@ public class StrandSpawner : MonoBehaviour
        } 
        else
        {
+        //increases frame count
         frameCount++;
        }
 
+        //when the strand count equals 22 destroys the strand spawner and the strand collider
        if(strandCount == 22) 
        {
         Destroy(GameObject.FindWithTag("StrandSpawner"));
@@ -96,8 +107,10 @@ public class StrandSpawner : MonoBehaviour
 
     public void SpawnStrandDivide(Vector3 spawnPosition, List<GameObject> chosenStrands)
     {
+        //positions to spawn both matching dna strand pairs
         Vector3 spawnPositionOne = new Vector3(spawnPosition.x, spawnPosition.y, spawnPosition.z+0.1f);
         Vector3 spawnPositionTwo = new Vector3(spawnPosition.x, spawnPosition.y, spawnPosition.z-0.1f);
+        //object that will instantiate the chosen dna strand pair
         spawnableObject = Instantiate(chosenStrands[0], spawnPositionOne, Quaternion.identity);
         SpawnableObjectTwo = Instantiate(chosenStrands[1], spawnPositionTwo, Quaternion.identity);
     }

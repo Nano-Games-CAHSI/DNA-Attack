@@ -13,6 +13,7 @@ public class StrandMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //changes the position of the dna strand
         InvokeRepeating("ChangePosition", 0, 0);
     }
 

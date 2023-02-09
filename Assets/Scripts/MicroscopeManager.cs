@@ -38,17 +38,20 @@ public class MicroscopeManager : MonoBehaviour
 
         RaycastHit hit;
         Ray ray = arCamera.ScreenPointToRay(Input.GetTouch(0).position);
-
+        //verifies when the screen is being touched and uses ray cast
             if (RaycastManager.Raycast(Input.GetTouch(0).position, m_Hits)) {
                 if (Input.GetTouch(0).phase == TouchPhase.Moved || Input.GetTouch(0).phase == TouchPhase.Began || Input.GetTouch(0).phase == TouchPhase.Ended)
                 {
                     if (Physics.Raycast(ray, out hit)) 
                     {
+                        //verifies if you hit the microscope asset
                         if (hit.collider.name == "Microscope")
                         {
+                            //destroys the microscope asset and activates the dnaBeat game canvas
                             Destroy(hit.collider.gameObject);
                             dnaBeatCanvas.SetActive(true);
                             //SpawnStrandSpawner(m_Hits[0].pose.position);
+                            //spawns the dna strand spawner where microscope was placed
                             Vector3 SpawnerPosition = new Vector3(hit.collider.gameObject.transform.position.x, hit.collider.gameObject.transform.position.y+0.5f, hit.collider.gameObject.transform.position.z);
                             SpawnStrandSpawner(SpawnerPosition);
                         }
@@ -58,11 +61,14 @@ public class MicroscopeManager : MonoBehaviour
     }
 
     public void SpawnNanobot(Vector3 spawnPosition){
+        //sets the spawnable object to be the nanobot
         spawnableObject = Instantiate(nanobotPrefab, spawnPosition, Quaternion.identity);
     }
 
     public void SpawnStrandSpawner(Vector3 spawnPosition){
+        //sets the spawnable object to be the Strand Spawner
         spawnableObject = Instantiate(StrandMatchSpawner, spawnPosition, Quaternion.identity);
+        //additionally spawns the Collider Checker bellow the strand spawner
         secondSpawnableObject = Instantiate(strandColliderCheck, new Vector3(spawnPosition.x, spawnPosition.y-1, spawnPosition.z), Quaternion.identity);
     }
 

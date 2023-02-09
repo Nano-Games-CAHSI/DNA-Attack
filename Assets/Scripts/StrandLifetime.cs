@@ -20,8 +20,10 @@ public class StrandLifetime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //verify if the strand is a certain position bellow the Strand Collider
         if(this.gameObject.transform.position.y < (float) (GameObject.FindWithTag("StrandCollider").transform.position.y-0.2))
         {
+            //destroys the dna strand
             Destroy(this.gameObject);
         }
     }
