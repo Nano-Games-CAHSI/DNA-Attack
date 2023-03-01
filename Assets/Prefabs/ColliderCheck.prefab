@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6470590306692911192}
   - component: {fileID: 666482565373047099}
   - component: {fileID: 1640783113221881756}
+  - component: {fileID: 4150290181620674487}
   m_Layer: 0
   m_Name: ColliderCheck
   m_TagString: StrandCollider
@@ -97,3 +98,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4150290181620674487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7321640143910027384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7bbb51345406b45a27c00ea8398b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 0

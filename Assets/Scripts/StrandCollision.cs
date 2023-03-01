@@ -29,15 +29,6 @@ public class StrandCollision : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other) {
-        //if(other.gameObject.name == "Adeine") Debug.Log("A");
-        Debug.Log("Works");  
-    }
-
-    private void OnTriggerExit(Collider other) {
-        Debug.Log("Works Left");
-    }
-
     private void spawnAdenine() {
         if(inContact){
 

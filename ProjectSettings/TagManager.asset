@@ -8,6 +8,11 @@ TagManager:
   - StrandSpawner
   - StrandCollider
   - Empty
+  - Adeine
+  - Cytosine
+  - Guanine
+  - Thymine
+  - PointScore
   layers:
   - Default
   - TransparentFX

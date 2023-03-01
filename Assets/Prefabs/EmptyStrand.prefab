@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 507086658826728994}
   - component: {fileID: 2475577699037707459}
   - component: {fileID: -8227995620043753090}
+  - component: {fileID: 861424485303620329}
   m_Layer: 0
-  m_Name: Nanito
+  m_Name: EmptyStrand
   m_TagString: Empty
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,3 +144,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 3
+--- !u!54 &861424485303620329
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5602512435650527265}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 1
