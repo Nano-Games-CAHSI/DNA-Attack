@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class StrandSpawner : MonoBehaviour
 {
@@ -17,15 +18,19 @@ public class StrandSpawner : MonoBehaviour
     [SerializeField]
     GameObject slotFill;
 
+    TextMeshProUGUI poinstScored;
+
     GameObject spawnableObject;
     GameObject SpawnableObjectTwo;
 
     int frameCount;
     int strandCount;
+    public bool end;
 
     // Start is called before the first frame update
     void Start()
     {
+        end = false;
         //creates the list of adeine and empty strand combination and adds it to the dividedStrands list
         List<GameObject> AE = new List<GameObject>();
         AE.Add(adeine);
@@ -100,8 +105,10 @@ public class StrandSpawner : MonoBehaviour
         //when the strand count equals 22 destroys the strand spawner and the strand collider
        if(strandCount == 22) 
        {
-        Destroy(GameObject.FindWithTag("StrandSpawner"));
-        Destroy(GameObject.FindWithTag("StrandCollider"));
+        GameObject.FindWithTag("StrandSpawner").GetComponent<StrandSpawner>().end = true;
+        Destroy(GameObject.FindWithTag("StrandSpawner"), 3);
+        Destroy(GameObject.FindWithTag("StrandCollider"), 3);
+        Destroy(GameObject.FindWithTag("StrandSpawnCanvas"), 3);
        }
     }
 

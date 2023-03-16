@@ -13,6 +13,12 @@ TagManager:
   - Guanine
   - Thymine
   - PointScore
+  - StartCanvas
+  - StrandSpawnCanvas
+  - EndCanvas
+  - EndScore
+  - ScoreKeeper
+  - WinManager
   layers:
   - Default
   - TransparentFX

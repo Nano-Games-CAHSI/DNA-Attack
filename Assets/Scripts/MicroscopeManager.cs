@@ -19,6 +19,8 @@ public class MicroscopeManager : MonoBehaviour
     GameObject dnaBeatCanvas;
     [SerializeField]
     GameObject microscope;
+    [SerializeField]
+    GameObject WinManager;
 
     List<ARRaycastHit> m_Hits = new List<ARRaycastHit>();
     Camera arCamera;
@@ -54,6 +56,7 @@ public class MicroscopeManager : MonoBehaviour
                             //spawns the dna strand spawner where microscope was placed
                             Vector3 SpawnerPosition = new Vector3(hit.collider.gameObject.transform.position.x, hit.collider.gameObject.transform.position.y+0.5f, hit.collider.gameObject.transform.position.z);
                             SpawnStrandSpawner(SpawnerPosition);
+                            WinManager.SetActive(true);
                         }
                     }
                 }

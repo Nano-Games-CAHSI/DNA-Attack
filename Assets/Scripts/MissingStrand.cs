@@ -24,17 +24,18 @@ public class MissingStrand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+    
     }
 
     public void SpawnStrandA()
     {
+        GameObject pointObject = GameObject.FindWithTag("ScoreKeeper");
         GameObject poinstScored_text_object = GameObject.FindWithTag("PointScore");
         poinstScored_text = poinstScored_text_object.GetComponent<TextMeshProUGUI>();
 
@@ -44,7 +45,7 @@ public class MissingStrand : MonoBehaviour
        spawnableObject = Instantiate(adeine, pos, Quaternion.identity);
        //destroys the empty strand
        float dist = Vector3.Distance(GameObject.FindWithTag("Adeine").transform.position, GameObject.FindWithTag("Empty").transform.position);
-       if(dist<0.3)
+       if(dist<0.25)
        {
             if(GameObject.FindWithTag("Empty").transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.1 && GameObject.FindWithTag("Empty").transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.1){
                 pointCounter+=2;
@@ -61,10 +62,12 @@ public class MissingStrand : MonoBehaviour
        }
        poinstScored_text.SetText("Points Scored: "+pointCounter);
        Destroy(GameObject.FindWithTag("Empty"));
+       pointObject.GetComponent<Score>().pointCounter = pointCounter;
     }
 
     public void SpawnStrandC()
     {
+        GameObject pointObject = GameObject.FindWithTag("ScoreKeeper");
         GameObject poinstScored_text_object = GameObject.FindWithTag("PointScore");
         poinstScored_text = poinstScored_text_object.GetComponent<TextMeshProUGUI>();
 
@@ -91,10 +94,12 @@ public class MissingStrand : MonoBehaviour
        }
        poinstScored_text.SetText("Points Scored: "+pointCounter);
        Destroy(GameObject.FindWithTag("Empty"));
+       pointObject.GetComponent<Score>().pointCounter = pointCounter;
     }
 
     public void SpawnStrandT()
     {
+        GameObject pointObject = GameObject.FindWithTag("ScoreKeeper");
         GameObject poinstScored_text_object = GameObject.FindWithTag("PointScore");
         poinstScored_text = poinstScored_text_object.GetComponent<TextMeshProUGUI>();
 
@@ -121,10 +126,12 @@ public class MissingStrand : MonoBehaviour
        }
        poinstScored_text.SetText("Points Scored: "+pointCounter);
        Destroy(GameObject.FindWithTag("Empty"));
+       pointObject.GetComponent<Score>().pointCounter = pointCounter;
     }
 
     public void SpawnStrandG()
     {
+        GameObject pointObject = GameObject.FindWithTag("ScoreKeeper");
         GameObject poinstScored_text_object = GameObject.FindWithTag("PointScore");
         poinstScored_text = poinstScored_text_object.GetComponent<TextMeshProUGUI>();
 
@@ -151,6 +158,7 @@ public class MissingStrand : MonoBehaviour
        }
        poinstScored_text.SetText("Points Scored: "+pointCounter);
        Destroy(GameObject.FindWithTag("Empty"));
+       pointObject.GetComponent<Score>().pointCounter = pointCounter;
     }
 
 }
