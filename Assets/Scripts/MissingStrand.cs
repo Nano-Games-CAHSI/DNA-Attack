@@ -42,15 +42,17 @@ public class MissingStrand : MonoBehaviour
         //finds position of object tagged empty filling in as an unmatched dna strand
         Vector3 pos = new Vector3(GameObject.FindWithTag("Empty").transform.position.x, (float) (GameObject.FindWithTag("Empty").transform.position.y - 0.01), GameObject.FindWithTag("Empty").transform.position.z);
        //spawns the adeine strand where the empty strand was
+       Destroy(GameObject.FindWithTag("Empty"));
        spawnableObject = Instantiate(adeine, pos, Quaternion.identity);
        //destroys the empty strand
-       float dist = Vector3.Distance(GameObject.FindWithTag("Adeine").transform.position, GameObject.FindWithTag("Empty").transform.position);
-       if(dist<0.25)
+       float dist = Vector3.Distance(GameObject.FindWithTag("Adeine").transform.position, spawnableObject.transform.position);
+       Debug.Log(dist);
+       if(dist<0.25 && dist>=0.20)
        {
-            if(GameObject.FindWithTag("Empty").transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.1 && GameObject.FindWithTag("Empty").transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.1){
+            if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.1 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.1){
                 pointCounter+=2;
             }
-            else if(GameObject.FindWithTag("Empty").transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.2 && GameObject.FindWithTag("Empty").transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.2){
+            else if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.2 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.2){
                 pointCounter+=1;
             }
             else{
@@ -61,7 +63,6 @@ public class MissingStrand : MonoBehaviour
         pointCounter-=1;
        }
        poinstScored_text.SetText("Points Scored: "+pointCounter);
-       Destroy(GameObject.FindWithTag("Empty"));
        pointObject.GetComponent<Score>().pointCounter = pointCounter;
     }
 
@@ -74,15 +75,16 @@ public class MissingStrand : MonoBehaviour
         //finds position of object tagged empty filling in as an unmatched dna strand
         Vector3 pos = new Vector3(GameObject.FindWithTag("Empty").transform.position.x, (float) (GameObject.FindWithTag("Empty").transform.position.y - 0.01), GameObject.FindWithTag("Empty").transform.position.z);
        //spawns the cytosine strand where the empty strand was
+       Destroy(GameObject.FindWithTag("Empty"));
        spawnableObject = Instantiate(cytosine, pos, Quaternion.identity);
        //destroys the empty strand
-       float dist = Vector3.Distance(GameObject.FindWithTag("Cytosine").transform.position, GameObject.FindWithTag("Empty").transform.position);
-       if(dist<0.3)
+       float dist = Vector3.Distance(GameObject.FindWithTag("Cytosine").transform.position, spawnableObject.transform.position);
+       if(dist<0.25 && dist>=0.20)
        {
-            if(GameObject.FindWithTag("Empty").transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.1 && GameObject.FindWithTag("Empty").transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.1){
+            if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.1 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.1){
                 pointCounter+=2;
             }
-            else if(GameObject.FindWithTag("Empty").transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.2 && GameObject.FindWithTag("Empty").transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.2){
+            else if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.2 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.2){
                 pointCounter+=1;
             }
             else{
@@ -93,7 +95,6 @@ public class MissingStrand : MonoBehaviour
         pointCounter-=1;
        }
        poinstScored_text.SetText("Points Scored: "+pointCounter);
-       Destroy(GameObject.FindWithTag("Empty"));
        pointObject.GetComponent<Score>().pointCounter = pointCounter;
     }
 
@@ -106,15 +107,16 @@ public class MissingStrand : MonoBehaviour
         //finds position of object tagged empty filling in as an unmatched dna strand
         Vector3 pos = new Vector3(GameObject.FindWithTag("Empty").transform.position.x, (float) (GameObject.FindWithTag("Empty").transform.position.y - 0.01), GameObject.FindWithTag("Empty").transform.position.z);
         //spawns the thymine strand where the empty strand was
+        Destroy(GameObject.FindWithTag("Empty"));
         spawnableObject = Instantiate(thymine, pos, Quaternion.identity);
         //destroys the empty strand
-       float dist = Vector3.Distance(GameObject.FindWithTag("Thymine").transform.position, GameObject.FindWithTag("Empty").transform.position);
-       if(dist<0.3)
+       float dist = Vector3.Distance(GameObject.FindWithTag("Thymine").transform.position, spawnableObject.transform.position);
+       if(dist<0.25 && dist>=0.20)
        {
-            if(GameObject.FindWithTag("Empty").transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.1 && GameObject.FindWithTag("Empty").transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.1){
+            if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.1 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.1){
                 pointCounter+=2;
             }
-            else if(GameObject.FindWithTag("Empty").transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.2 && GameObject.FindWithTag("Empty").transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.2){
+            else if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.2 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.2){
                 pointCounter+=1;
             }
             else{
@@ -125,7 +127,6 @@ public class MissingStrand : MonoBehaviour
         pointCounter-=1;
        }
        poinstScored_text.SetText("Points Scored: "+pointCounter);
-       Destroy(GameObject.FindWithTag("Empty"));
        pointObject.GetComponent<Score>().pointCounter = pointCounter;
     }
 
@@ -138,15 +139,16 @@ public class MissingStrand : MonoBehaviour
         //finds position of object tagged empty filling in as an unmatched dna strand
         Vector3 pos = new Vector3(GameObject.FindWithTag("Empty").transform.position.x, (float) (GameObject.FindWithTag("Empty").transform.position.y - 0.01), GameObject.FindWithTag("Empty").transform.position.z);
         //spawns the guanine strand where the empty strand was
+        Destroy(GameObject.FindWithTag("Empty"));
         spawnableObject = Instantiate(guanine, pos, Quaternion.identity);
         //destroys the empty strand
-       float dist = Vector3.Distance(GameObject.FindWithTag("Guanine").transform.position, GameObject.FindWithTag("Empty").transform.position);
-       if(dist<0.3)
+       float dist = Vector3.Distance(GameObject.FindWithTag("Guanine").transform.position, spawnableObject.transform.position);
+       if(dist<0.25 && dist>=0.20)
        {
-            if(GameObject.FindWithTag("Empty").transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.1 && GameObject.FindWithTag("Empty").transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.1){
+            if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.1 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.1){
                 pointCounter+=2;
             }
-            else if(GameObject.FindWithTag("Empty").transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.2 && GameObject.FindWithTag("Empty").transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.2){
+            else if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.2 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.2){
                 pointCounter+=1;
             }
             else{
@@ -157,7 +159,6 @@ public class MissingStrand : MonoBehaviour
         pointCounter-=1;
        }
        poinstScored_text.SetText("Points Scored: "+pointCounter);
-       Destroy(GameObject.FindWithTag("Empty"));
        pointObject.GetComponent<Score>().pointCounter = pointCounter;
     }
 
