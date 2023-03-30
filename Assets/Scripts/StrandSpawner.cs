@@ -86,7 +86,8 @@ public class StrandSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(frameCount==30)
+        //return back to 30
+       if(frameCount==60)
        {
         //if less than 20 strands have been spawned keeps spawning strand combinations at random
         if(strandCount<20)

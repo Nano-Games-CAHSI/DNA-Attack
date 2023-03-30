@@ -19,6 +19,8 @@ public class StrandMovement : MonoBehaviour
 
     void ChangePosition () {
         //Compute position for next time
-        transform.position = new Vector3 (transform.position.x, (float) (transform.position.y - 0.01), transform.position.z);
+        
+        //fix - 0.005 to -0.01
+        transform.position = new Vector3 (transform.position.x, (float) (transform.position.y - 0.005), transform.position.z);
     }
 }
