@@ -107,17 +107,17 @@ public class StrandSpawner : MonoBehaviour
        if(strandCount == 22) 
        {
         GameObject.FindWithTag("StrandSpawner").GetComponent<StrandSpawner>().end = true;
-        Destroy(GameObject.FindWithTag("StrandSpawner"), 3);
-        Destroy(GameObject.FindWithTag("StrandCollider"), 3);
-        Destroy(GameObject.FindWithTag("StrandSpawnCanvas"), 3);
+        Destroy(GameObject.FindWithTag("StrandSpawner"), 4);
+        Destroy(GameObject.FindWithTag("StrandCollider"), 4);
+        Destroy(GameObject.FindWithTag("StrandSpawnCanvas"), 4);
        }
     }
 
     public void SpawnStrandDivide(Vector3 spawnPosition, List<GameObject> chosenStrands)
     {
         //positions to spawn both matching dna strand pairs
-        Vector3 spawnPositionOne = new Vector3(spawnPosition.x, spawnPosition.y, spawnPosition.z+0.1f);
-        Vector3 spawnPositionTwo = new Vector3(spawnPosition.x, spawnPosition.y, spawnPosition.z-0.1f);
+        Vector3 spawnPositionOne = new Vector3(spawnPosition.x+0.1f, spawnPosition.y, spawnPosition.z);
+        Vector3 spawnPositionTwo = new Vector3(spawnPosition.x-0.1f, spawnPosition.y, spawnPosition.z);
         //object that will instantiate the chosen dna strand pair
         spawnableObject = Instantiate(chosenStrands[0], spawnPositionOne, Quaternion.identity);
         SpawnableObjectTwo = Instantiate(chosenStrands[1], spawnPositionTwo, Quaternion.identity);

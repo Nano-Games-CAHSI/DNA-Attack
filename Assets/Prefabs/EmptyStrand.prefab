@@ -130,7 +130,7 @@ MonoBehaviour:
   cytosine: {fileID: 9081820077629933973, guid: 2e7abc9edf9497b41802960ad4116535,
     type: 3}
   guanine: {fileID: 2042839714465420685, guid: 8c08463a9670c6c458ece8b0f03a2f0c, type: 3}
-  range: 0.01
+  pointCounter: 0
 --- !u!114 &-8227995620043753090
 MonoBehaviour:
   m_ObjectHideFlags: 0

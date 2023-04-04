@@ -20540,10 +20540,6 @@ struct StartGame_t90AD9E5EF32F94D01D593C5340B2CCAD86A98E07  : public MonoBehavio
 // StrandCollision
 struct StrandCollision_tAC37B68F887FEB15C2601138A561155E119AF5A5  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
-	// System.Single StrandCollision::range
-	float ___range_4;
-	// System.Boolean StrandCollision::inContact
-	bool ___inContact_5;
 };
 
 // StrandLifetime
@@ -20551,6 +20547,10 @@ struct StrandLifetime_t1EE985CB7E05107F55493FA40AEDEF4FFEFFB5DE  : public MonoBe
 {
 	// System.Single StrandLifetime::lifetime
 	float ___lifetime_4;
+	// Score StrandLifetime::pointsScript
+	Score_t190877D354724EB1BD99FA27F906E19CB8F0C88A* ___pointsScript_5;
+	// TMPro.TextMeshProUGUI StrandLifetime::poinstScored_text
+	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___poinstScored_text_6;
 };
 
 // StrandMovement

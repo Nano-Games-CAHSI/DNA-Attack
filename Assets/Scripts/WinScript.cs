@@ -27,11 +27,11 @@ public class WinScript : MonoBehaviour
         }
         if(condition)
         {
-            if(frameCount==90)
+            if(frameCount==120)
             {
                 endGameCanvas.SetActive(true);
             }
-            else if(frameCount<90)
+            else if(frameCount<120)
             {
                 frameCount++;
             }

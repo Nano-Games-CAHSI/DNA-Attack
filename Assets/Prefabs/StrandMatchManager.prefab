@@ -117,3 +117,4 @@ MonoBehaviour:
   guanine: {fileID: 2042839714465420685, guid: 8c08463a9670c6c458ece8b0f03a2f0c, type: 3}
   slotFill: {fileID: 5602512435650527265, guid: e5d7ad20f38dc2f44a8c71891a2db2f8,
     type: 3}
+  end: 0

@@ -20,7 +20,7 @@ public class StartGame : MonoBehaviour
 
     public void spawnMicroscope(GameObject microscope)
     {
-        GameObject Microscope = Instantiate(microscope, new Vector3(0.1f, 0f, 0.1f), Quaternion.identity);
+        GameObject Microscope = Instantiate(microscope, new Vector3(-0.2f, 0f, 1.0f), Quaternion.Euler(new Vector3(0,90,0)));
         Microscope.transform.localScale = scaleFactor;
         Microscope.name = "Microscope";
         GameObject.FindWithTag("StartCanvas").SetActive(false);

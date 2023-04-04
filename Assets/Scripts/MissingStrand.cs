@@ -39,6 +39,8 @@ public class MissingStrand : MonoBehaviour
         GameObject poinstScored_text_object = GameObject.FindWithTag("PointScore");
         poinstScored_text = poinstScored_text_object.GetComponent<TextMeshProUGUI>();
 
+        pointCounter = pointObject.GetComponent<Score>().pointCounter;
+
         //finds position of object tagged empty filling in as an unmatched dna strand
         Vector3 pos = new Vector3(GameObject.FindWithTag("Empty").transform.position.x, (float) (GameObject.FindWithTag("Empty").transform.position.y - 0.01), GameObject.FindWithTag("Empty").transform.position.z);
        //spawns the adeine strand where the empty strand was
@@ -72,6 +74,8 @@ public class MissingStrand : MonoBehaviour
         GameObject poinstScored_text_object = GameObject.FindWithTag("PointScore");
         poinstScored_text = poinstScored_text_object.GetComponent<TextMeshProUGUI>();
 
+        pointCounter = pointObject.GetComponent<Score>().pointCounter;
+
         //finds position of object tagged empty filling in as an unmatched dna strand
         Vector3 pos = new Vector3(GameObject.FindWithTag("Empty").transform.position.x, (float) (GameObject.FindWithTag("Empty").transform.position.y - 0.01), GameObject.FindWithTag("Empty").transform.position.z);
        //spawns the cytosine strand where the empty strand was
@@ -104,6 +108,8 @@ public class MissingStrand : MonoBehaviour
         GameObject poinstScored_text_object = GameObject.FindWithTag("PointScore");
         poinstScored_text = poinstScored_text_object.GetComponent<TextMeshProUGUI>();
 
+        pointCounter = pointObject.GetComponent<Score>().pointCounter;
+
         //finds position of object tagged empty filling in as an unmatched dna strand
         Vector3 pos = new Vector3(GameObject.FindWithTag("Empty").transform.position.x, (float) (GameObject.FindWithTag("Empty").transform.position.y - 0.01), GameObject.FindWithTag("Empty").transform.position.z);
         //spawns the thymine strand where the empty strand was
@@ -135,6 +141,8 @@ public class MissingStrand : MonoBehaviour
         GameObject pointObject = GameObject.FindWithTag("ScoreKeeper");
         GameObject poinstScored_text_object = GameObject.FindWithTag("PointScore");
         poinstScored_text = poinstScored_text_object.GetComponent<TextMeshProUGUI>();
+
+        pointCounter = pointObject.GetComponent<Score>().pointCounter;
 
         //finds position of object tagged empty filling in as an unmatched dna strand
         Vector3 pos = new Vector3(GameObject.FindWithTag("Empty").transform.position.x, (float) (GameObject.FindWithTag("Empty").transform.position.y - 0.01), GameObject.FindWithTag("Empty").transform.position.z);

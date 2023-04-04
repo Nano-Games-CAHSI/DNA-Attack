@@ -840,6 +840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1776289382809178371}
   - component: {fileID: 5804417382343912449}
+  - component: {fileID: -5038808785990004487}
   m_Layer: 0
   m_Name: Microscope
   m_TagString: Microscope
@@ -854,7 +855,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3690245895155030466}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 41.024193, y: -0.6, z: -142.23645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -888,7 +889,7 @@ Transform:
   - {fileID: 5113034232996319427}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &5804417382343912449
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -902,6 +903,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 5, z: 4}
   m_Center: {x: 0, y: 2.2, z: 1.8}
+--- !u!114 &-5038808785990004487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690245895155030466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb898793194e03f4bb10dba03ec2cb70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DestroyOnRemoval: 1
 --- !u!1 &3902356506679958630
 GameObject:
   m_ObjectHideFlags: 0

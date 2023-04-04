@@ -54,7 +54,7 @@ public class MicroscopeManager : MonoBehaviour
                             dnaBeatCanvas.SetActive(true);
                             //SpawnStrandSpawner(m_Hits[0].pose.position);
                             //spawns the dna strand spawner where microscope was placed
-                            Vector3 SpawnerPosition = new Vector3(hit.collider.gameObject.transform.position.x, hit.collider.gameObject.transform.position.y+0.5f, hit.collider.gameObject.transform.position.z);
+                            Vector3 SpawnerPosition = new Vector3(hit.collider.gameObject.transform.position.x+0.1f, hit.collider.gameObject.transform.position.y+0.5f, hit.collider.gameObject.transform.position.z);
                             SpawnStrandSpawner(SpawnerPosition);
                             WinManager.SetActive(true);
                         }
@@ -70,9 +70,9 @@ public class MicroscopeManager : MonoBehaviour
 
     public void SpawnStrandSpawner(Vector3 spawnPosition){
         //sets the spawnable object to be the Strand Spawner
-        spawnableObject = Instantiate(StrandMatchSpawner, spawnPosition, Quaternion.identity);
+        spawnableObject = Instantiate(StrandMatchSpawner, spawnPosition, Quaternion.Euler(new Vector3(0,90,0)));
         //additionally spawns the Collider Checker bellow the strand spawner
-        secondSpawnableObject = Instantiate(strandColliderCheck, new Vector3(spawnPosition.x, spawnPosition.y-1, spawnPosition.z), Quaternion.identity);
+        secondSpawnableObject = Instantiate(strandColliderCheck, new Vector3(spawnPosition.x, spawnPosition.y-1, spawnPosition.z), Quaternion.Euler(new Vector3(0,90,0)));
     }
 
 
