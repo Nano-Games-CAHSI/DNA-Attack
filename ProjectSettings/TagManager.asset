@@ -3,7 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Microscope
+  - StrandSpawner
+  - StrandCollider
+  - Empty
+  - Adeine
+  - Cytosine
+  - Guanine
+  - Thymine
+  - PointScore
+  - StartCanvas
+  - StrandSpawnCanvas
+  - EndCanvas
+  - EndScore
+  - ScoreKeeper
+  - WinManager
   layers:
   - Default
   - TransparentFX
