@@ -19,6 +19,8 @@ TagManager:
   - EndScore
   - ScoreKeeper
   - WinManager
+  - MatchLeft
+  - MatchRight
   layers:
   - Default
   - TransparentFX
