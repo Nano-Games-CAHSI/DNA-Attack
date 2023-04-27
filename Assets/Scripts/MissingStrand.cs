@@ -14,6 +14,12 @@ public class MissingStrand : MonoBehaviour
     GameObject cytosine;
     [SerializeField]
     GameObject guanine;
+    [SerializeField]
+    private Color color_green = Color.green;
+    [SerializeField]
+    private Color color_yellow = Color.yellow;
+    [SerializeField]
+    private Color color_red;
 
     TextMeshProUGUI poinstScored_text;
 
@@ -24,7 +30,7 @@ public class MissingStrand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        color_red = Color.red * Mathf.Pow(2, 2f);
     }
 
     // Update is called once per frame
@@ -45,7 +51,7 @@ public class MissingStrand : MonoBehaviour
         Vector3 pos = new Vector3(GameObject.FindWithTag("Empty").transform.position.x, (float) (GameObject.FindWithTag("Empty").transform.position.y - 0.01), GameObject.FindWithTag("Empty").transform.position.z);
        //spawns the adeine strand where the empty strand was
        Destroy(GameObject.FindWithTag("Empty"));
-       spawnableObject = Instantiate(adeine, pos, Quaternion.identity);
+       spawnableObject = Instantiate(adeine, pos, Quaternion.Euler(new Vector3(90,0,90)));
        //destroys the empty strand
        float dist = Vector3.Distance(GameObject.FindWithTag("Adeine").transform.position, spawnableObject.transform.position);
        Debug.Log(dist);
@@ -53,16 +59,26 @@ public class MissingStrand : MonoBehaviour
        {
             if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.1 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.1){
                 pointCounter+=2;
+                spawnableObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                spawnableObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", color_green);
             }
             else if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.2 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.2){
                 pointCounter+=1;
+                spawnableObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                spawnableObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", color_yellow);
             }
             else{
                 pointCounter-=1;
+                spawnableObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                spawnableObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", color_red);
+                Behaviour halo = (Behaviour)spawnableObject.GetComponent("Halo");
+                halo.GetType().GetProperty("enabled").SetValue(halo, true, null);
             }        
        }
        else{
         pointCounter-=1;
+        spawnableObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+        spawnableObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", color_red);
        }
        poinstScored_text.SetText("Points Scored: "+pointCounter);
        pointObject.GetComponent<Score>().pointCounter = pointCounter;
@@ -80,7 +96,7 @@ public class MissingStrand : MonoBehaviour
         Vector3 pos = new Vector3(GameObject.FindWithTag("Empty").transform.position.x, (float) (GameObject.FindWithTag("Empty").transform.position.y - 0.01), GameObject.FindWithTag("Empty").transform.position.z);
        //spawns the cytosine strand where the empty strand was
        Destroy(GameObject.FindWithTag("Empty"));
-       spawnableObject = Instantiate(cytosine, pos, Quaternion.identity);
+       spawnableObject = Instantiate(cytosine, pos, Quaternion.Euler(new Vector3(90,0,90)));
        //destroys the empty strand
        float dist = Vector3.Distance(GameObject.FindWithTag("Cytosine").transform.position, spawnableObject.transform.position);
        if(dist<0.25 && dist>=0.20)
@@ -114,7 +130,7 @@ public class MissingStrand : MonoBehaviour
         Vector3 pos = new Vector3(GameObject.FindWithTag("Empty").transform.position.x, (float) (GameObject.FindWithTag("Empty").transform.position.y - 0.01), GameObject.FindWithTag("Empty").transform.position.z);
         //spawns the thymine strand where the empty strand was
         Destroy(GameObject.FindWithTag("Empty"));
-        spawnableObject = Instantiate(thymine, pos, Quaternion.identity);
+        spawnableObject = Instantiate(thymine, pos, Quaternion.Euler(new Vector3(90,0,90)));
         //destroys the empty strand
        float dist = Vector3.Distance(GameObject.FindWithTag("Thymine").transform.position, spawnableObject.transform.position);
        if(dist<0.25 && dist>=0.20)
@@ -148,7 +164,7 @@ public class MissingStrand : MonoBehaviour
         Vector3 pos = new Vector3(GameObject.FindWithTag("Empty").transform.position.x, (float) (GameObject.FindWithTag("Empty").transform.position.y - 0.01), GameObject.FindWithTag("Empty").transform.position.z);
         //spawns the guanine strand where the empty strand was
         Destroy(GameObject.FindWithTag("Empty"));
-        spawnableObject = Instantiate(guanine, pos, Quaternion.identity);
+        spawnableObject = Instantiate(guanine, pos, Quaternion.Euler(new Vector3(90,0,90)));
         //destroys the empty strand
        float dist = Vector3.Distance(GameObject.FindWithTag("Guanine").transform.position, spawnableObject.transform.position);
        if(dist<0.25 && dist>=0.20)

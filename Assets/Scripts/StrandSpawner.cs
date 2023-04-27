@@ -163,8 +163,8 @@ public class StrandSpawner : MonoBehaviour
         Vector3 spawnPositionOne = new Vector3(spawnPosition.x+0.1f, spawnPosition.y, spawnPosition.z);
         Vector3 spawnPositionTwo = new Vector3(spawnPosition.x-0.1f, spawnPosition.y, spawnPosition.z);
         //object that will instantiate the chosen dna strand pair
-        spawnableObject = Instantiate(chosenStrands[0], spawnPositionOne, Quaternion.identity);
-        SpawnableObjectTwo = Instantiate(chosenStrands[1], spawnPositionTwo, Quaternion.identity);
+        spawnableObject = Instantiate(chosenStrands[0], spawnPositionOne, Quaternion.Euler(new Vector3(90,0,90)));
+        SpawnableObjectTwo = Instantiate(chosenStrands[1], spawnPositionTwo, Quaternion.Euler(new Vector3(90,0,90)));
     }
 
 }
