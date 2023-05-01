@@ -20,7 +20,8 @@ public class StrandLifetime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        GameObject pointObject = GameObject.FindWithTag("ScoreKeeper");
+        pointsScript = pointObject.GetComponent<Score>();
     }
 
     // Update is called once per frame
@@ -39,6 +40,9 @@ public class StrandLifetime : MonoBehaviour
                 poinstScored_text.SetText("Points Scored: "+pointObject.GetComponent<Score>().pointCounter);
             }
             Destroy(this.gameObject);
+            GameObject.FindWithTag("MatchLeft").GetComponent<Renderer>().material = pointsScript.supposedMatched[0][0].GetComponent<Renderer>().material;
+            GameObject.FindWithTag("MatchRight").GetComponent<Renderer>().material = pointsScript.supposedMatched[0][1].GetComponent<Renderer>().material;
+            pointsScript.supposedMatched.RemoveAt(0);
         }
     }
 }

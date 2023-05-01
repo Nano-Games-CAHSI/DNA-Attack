@@ -18,6 +18,8 @@ public class StrandSpawner : MonoBehaviour
     [SerializeField]
     GameObject slotFill;
 
+    Score pointsScript;
+
     TextMeshProUGUI poinstScored;
 
     GameObject spawnableObject;
@@ -30,6 +32,9 @@ public class StrandSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject pointObject = GameObject.FindWithTag("ScoreKeeper");
+        pointsScript = pointObject.GetComponent<Score>();
+
         end = false;
         //creates the list of adeine and empty strand combination and adds it to the dividedStrands list
         List<GameObject> AE = new List<GameObject>();
@@ -92,7 +97,44 @@ public class StrandSpawner : MonoBehaviour
         //if less than 20 strands have been spawned keeps spawning strand combinations at random
         if(strandCount<20)
         {
-            SpawnStrandDivide(transform.position, dividedStrands[Random.Range(0, dividedStrands.Count)]);
+            List<GameObject> randomStrand = dividedStrands[Random.Range(0, dividedStrands.Count)];
+            SpawnStrandDivide(transform.position, randomStrand);
+            
+            if (randomStrand[0]==adeine || randomStrand[1]==adeine){
+                List<GameObject> A = new List<GameObject>();
+                A.Add(adeine);
+                A.Add(adeine);
+                pointsScript.supposedMatched.Add(A);
+                pointsScript.supposedMatched.Add(A);
+                }
+            else if (randomStrand[0]==guanine || randomStrand[1]==guanine){
+                List<GameObject> G = new List<GameObject>();
+                G.Add(guanine);
+                G.Add(guanine);
+                pointsScript.supposedMatched.Add(G);
+                pointsScript.supposedMatched.Add(G);
+                }
+            else if (randomStrand[0]==thymine || randomStrand[1]==thymine){
+                List<GameObject> T = new List<GameObject>();
+                T.Add(thymine);
+                T.Add(thymine);
+                pointsScript.supposedMatched.Add(T);
+                pointsScript.supposedMatched.Add(T);
+                }
+            else if (randomStrand[0]==cytosine || randomStrand[1]==cytosine){
+                List<GameObject> C = new List<GameObject>();
+                C.Add(cytosine);
+                C.Add(cytosine);
+                pointsScript.supposedMatched.Add(C);
+                pointsScript.supposedMatched.Add(C);
+            }
+            if (strandCount==0){
+                GameObject.FindWithTag("MatchLeft").GetComponent<Renderer>().material = pointsScript.supposedMatched[0][0].GetComponent<Renderer>().material;
+                GameObject.FindWithTag("MatchRight").GetComponent<Renderer>().material = pointsScript.supposedMatched[0][1].GetComponent<Renderer>().material;
+                pointsScript.supposedMatched.RemoveAt(0);
+                pointsScript.supposedMatched.RemoveAt(0);
+            }
+            
         }
         frameCount=0;
         strandCount++;
@@ -110,6 +152,8 @@ public class StrandSpawner : MonoBehaviour
         Destroy(GameObject.FindWithTag("StrandSpawner"), 4);
         Destroy(GameObject.FindWithTag("StrandCollider"), 4);
         Destroy(GameObject.FindWithTag("StrandSpawnCanvas"), 4);
+        Destroy(GameObject.FindWithTag("MatchLeft"), 4);
+        Destroy(GameObject.FindWithTag("MatchRight"), 4);
        }
     }
 
@@ -119,8 +163,8 @@ public class StrandSpawner : MonoBehaviour
         Vector3 spawnPositionOne = new Vector3(spawnPosition.x+0.1f, spawnPosition.y, spawnPosition.z);
         Vector3 spawnPositionTwo = new Vector3(spawnPosition.x-0.1f, spawnPosition.y, spawnPosition.z);
         //object that will instantiate the chosen dna strand pair
-        spawnableObject = Instantiate(chosenStrands[0], spawnPositionOne, Quaternion.identity);
-        SpawnableObjectTwo = Instantiate(chosenStrands[1], spawnPositionTwo, Quaternion.identity);
+        spawnableObject = Instantiate(chosenStrands[0], spawnPositionOne, Quaternion.Euler(new Vector3(90,0,90)));
+        SpawnableObjectTwo = Instantiate(chosenStrands[1], spawnPositionTwo, Quaternion.Euler(new Vector3(90,0,90)));
     }
 
 }
