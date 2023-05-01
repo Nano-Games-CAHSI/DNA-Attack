@@ -15,11 +15,11 @@ public class MissingStrand : MonoBehaviour
     [SerializeField]
     GameObject guanine;
     [SerializeField]
-    private Color color_green = Color.green;
+    private Material color_green;
     [SerializeField]
-    private Color color_yellow = Color.yellow;
+    private Material color_yellow;
     [SerializeField]
-    private Color color_red;
+    private Material color_red;
 
     TextMeshProUGUI poinstScored_text;
 
@@ -30,7 +30,7 @@ public class MissingStrand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        color_red = Color.red * Mathf.Pow(2, 2f);
+   
     }
 
     // Update is called once per frame
@@ -59,26 +59,20 @@ public class MissingStrand : MonoBehaviour
        {
             if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.1 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.1){
                 pointCounter+=2;
-                spawnableObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                spawnableObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", color_green);
+                spawnableObject.GetComponent<MeshRenderer>().material = color_green;
             }
             else if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.2 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.2){
                 pointCounter+=1;
-                spawnableObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                spawnableObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", color_yellow);
+                spawnableObject.GetComponent<MeshRenderer>().material = color_yellow;
             }
             else{
                 pointCounter-=1;
-                spawnableObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                spawnableObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", color_red);
-                Behaviour halo = (Behaviour)spawnableObject.GetComponent("Halo");
-                halo.GetType().GetProperty("enabled").SetValue(halo, true, null);
+                spawnableObject.GetComponent<MeshRenderer>().material = color_red;
             }        
        }
        else{
         pointCounter-=1;
-        spawnableObject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-        spawnableObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", color_red);
+        spawnableObject.GetComponent<MeshRenderer>().material = color_red;
        }
        poinstScored_text.SetText("Points Scored: "+pointCounter);
        pointObject.GetComponent<Score>().pointCounter = pointCounter;
