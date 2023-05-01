@@ -14,12 +14,6 @@ public class MissingStrand : MonoBehaviour
     GameObject cytosine;
     [SerializeField]
     GameObject guanine;
-    [SerializeField]
-    private Material color_green;
-    [SerializeField]
-    private Material color_yellow;
-    [SerializeField]
-    private Material color_red;
 
     TextMeshProUGUI poinstScored_text;
 
@@ -59,20 +53,16 @@ public class MissingStrand : MonoBehaviour
        {
             if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.1 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.1){
                 pointCounter+=2;
-                spawnableObject.GetComponent<MeshRenderer>().material = color_green;
             }
             else if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.2 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.2){
                 pointCounter+=1;
-                spawnableObject.GetComponent<MeshRenderer>().material = color_yellow;
             }
             else{
                 pointCounter-=1;
-                spawnableObject.GetComponent<MeshRenderer>().material = color_red;
             }        
        }
        else{
         pointCounter-=1;
-        spawnableObject.GetComponent<MeshRenderer>().material = color_red;
        }
        poinstScored_text.SetText("Points Scored: "+pointCounter);
        pointObject.GetComponent<Score>().pointCounter = pointCounter;
