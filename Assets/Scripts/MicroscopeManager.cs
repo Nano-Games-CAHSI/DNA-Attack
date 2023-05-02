@@ -11,6 +11,10 @@ public class MicroscopeManager : MonoBehaviour
     GameObject nanobotPrefab;
     GameObject spawnableObject;
     GameObject secondSpawnableObject;
+    GameObject spawnLeftMatch;
+    GameObject spawnRightMatch;
+    GameObject spawnSideLeft;
+    GameObject spawnSideRight;
     [SerializeField]
     GameObject StrandMatchSpawner;
     [SerializeField]
@@ -21,6 +25,12 @@ public class MicroscopeManager : MonoBehaviour
     GameObject microscope;
     [SerializeField]
     GameObject WinManager;
+    [SerializeField]
+    GameObject leftMatch;
+    [SerializeField]
+    GameObject rightMatch;
+    [SerializeField]
+    GameObject spawnSide;
 
     List<ARRaycastHit> m_Hits = new List<ARRaycastHit>();
     Camera arCamera;
@@ -30,6 +40,10 @@ public class MicroscopeManager : MonoBehaviour
     {
         spawnableObject = null;
         secondSpawnableObject = null;
+        spawnLeftMatch = null;
+        spawnRightMatch = null;
+        spawnSideLeft = null;
+        spawnSideRight = null;
         arCamera = GameObject.Find("AR Camera").GetComponent<Camera>();
     }
 
@@ -56,6 +70,8 @@ public class MicroscopeManager : MonoBehaviour
                             //spawns the dna strand spawner where microscope was placed
                             Vector3 SpawnerPosition = new Vector3(hit.collider.gameObject.transform.position.x+0.1f, hit.collider.gameObject.transform.position.y+0.5f, hit.collider.gameObject.transform.position.z);
                             SpawnStrandSpawner(SpawnerPosition);
+                            SpawnMatches(SpawnerPosition);
+                            SpawnStrandSides(SpawnerPosition);
                             WinManager.SetActive(true);
                         }
                     }
@@ -73,6 +89,16 @@ public class MicroscopeManager : MonoBehaviour
         spawnableObject = Instantiate(StrandMatchSpawner, spawnPosition, Quaternion.Euler(new Vector3(0,90,0)));
         //additionally spawns the Collider Checker bellow the strand spawner
         secondSpawnableObject = Instantiate(strandColliderCheck, new Vector3(spawnPosition.x, spawnPosition.y-1, spawnPosition.z), Quaternion.Euler(new Vector3(0,90,0)));
+    }
+
+    public void SpawnMatches(Vector3 spawnPosition){
+        spawnLeftMatch = Instantiate(leftMatch, new Vector3(spawnPosition.x-0.1f, spawnPosition.y+0.2f, spawnPosition.z), Quaternion.Euler(new Vector3(90,0,90)));
+        spawnRightMatch = Instantiate(rightMatch, new Vector3(spawnPosition.x+0.1f, spawnPosition.y+0.2f, spawnPosition.z), Quaternion.Euler(new Vector3(90,0,90)));
+    }
+
+    public void SpawnStrandSides(Vector3 spawnPosition){
+        spawnSideLeft = Instantiate(spawnSide, new Vector3(spawnPosition.x-0.2f, spawnPosition.y-spawnPosition.y/2-0.25125f, spawnPosition.z), Quaternion.identity);
+        spawnSideRight = Instantiate(spawnSide, new Vector3(spawnPosition.x+0.2f, spawnPosition.y-spawnPosition.y/2-0.25125f, spawnPosition.z), Quaternion.identity);
     }
 
 

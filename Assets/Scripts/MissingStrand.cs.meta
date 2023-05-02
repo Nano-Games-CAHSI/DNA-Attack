@@ -3,7 +3,14 @@ guid: 194f6a805a9c1ce4d9e1ef68ca13618d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - adeine: {instanceID: 0}
+  - thymine: {instanceID: 0}
+  - cytosine: {instanceID: 0}
+  - guanine: {instanceID: 0}
+  - color_green: {fileID: 2100000, guid: cbbdaa19c5bc00e42bfae8b5dd929410, type: 2}
+  - color_yellow: {fileID: 2100000, guid: 97d99bcec9831c64bad3f9bfb814be33, type: 2}
+  - color_red: {fileID: 2100000, guid: 8bf1e87cc6f42744a910a92e2754e2fd, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
