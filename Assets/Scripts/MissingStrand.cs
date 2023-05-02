@@ -6,14 +6,6 @@ using TMPro;
 
 public class MissingStrand : MonoBehaviour
 {
-    [SerializeField]
-    GameObject adeine;
-    [SerializeField]
-    GameObject thymine;
-    [SerializeField]
-    GameObject cytosine;
-    [SerializeField]
-    GameObject guanine;
 
     [SerializeField]
     Material adeine_material;
@@ -42,7 +34,7 @@ public class MissingStrand : MonoBehaviour
     
     }
 
-    public void SpawnStrandA()
+    public void SpawnStrand(Material strandMaterial, string strandName)
     {
         GameObject pointObject = GameObject.FindWithTag("ScoreKeeper");
         GameObject poinstScored_text_object = GameObject.FindWithTag("PointScore");
@@ -51,10 +43,9 @@ public class MissingStrand : MonoBehaviour
         pointCounter = pointObject.GetComponent<Score>().pointCounter;
 
        spawnableObject = GameObject.FindWithTag("Empty");
-       spawnableObject.GetComponent<Renderer>().material = adeine_material;
-       spawnableObject.tag = "Untagged";
+       spawnableObject.GetComponent<Renderer>().material = strandMaterial;
   
-       float dist = Vector3.Distance(GameObject.FindWithTag("Adeine").transform.position, spawnableObject.transform.position);
+       float dist = Vector3.Distance(GameObject.FindWithTag(strandName).transform.position, spawnableObject.transform.position);
        if(dist<0.25 && dist>=0.20)
        {
             if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.1 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.1){
@@ -70,104 +61,29 @@ public class MissingStrand : MonoBehaviour
        else{
         pointCounter-=1;
        }
+       spawnableObject.tag = strandName;
        poinstScored_text.SetText("Points Scored: "+pointCounter);
        pointObject.GetComponent<Score>().pointCounter = pointCounter;
+    }
+
+    public void SpawnStrandA()
+    {
+        SpawnStrand(adeine_material, "Adeine");
     }
 
     public void SpawnStrandC()
     {
-        GameObject pointObject = GameObject.FindWithTag("ScoreKeeper");
-        GameObject poinstScored_text_object = GameObject.FindWithTag("PointScore");
-        poinstScored_text = poinstScored_text_object.GetComponent<TextMeshProUGUI>();
-
-        pointCounter = pointObject.GetComponent<Score>().pointCounter;
-
-       spawnableObject = GameObject.FindWithTag("Empty");
-       spawnableObject.GetComponent<Renderer>().material = cytosine_material;
-       spawnableObject.tag = "Untagged";
-
-       float dist = Vector3.Distance(GameObject.FindWithTag("Cytosine").transform.position, spawnableObject.transform.position);
-       if(dist<0.25 && dist>=0.20)
-       {
-            if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.1 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.1){
-                pointCounter+=2;
-            }
-            else if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.2 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.2){
-                pointCounter+=1;
-            }
-            else{
-                pointCounter-=1;
-            }        
-       }
-       else{
-        pointCounter-=1;
-       }
-       poinstScored_text.SetText("Points Scored: "+pointCounter);
-       pointObject.GetComponent<Score>().pointCounter = pointCounter;
+        SpawnStrand(cytosine_material, "Cytosine");
     }
 
     public void SpawnStrandT()
     {
-        GameObject pointObject = GameObject.FindWithTag("ScoreKeeper");
-        GameObject poinstScored_text_object = GameObject.FindWithTag("PointScore");
-        poinstScored_text = poinstScored_text_object.GetComponent<TextMeshProUGUI>();
-
-        pointCounter = pointObject.GetComponent<Score>().pointCounter;
-
-       spawnableObject = GameObject.FindWithTag("Empty");
-       spawnableObject.GetComponent<Renderer>().material = thymine_material;
-       spawnableObject.tag = "Untagged";
-
-       float dist = Vector3.Distance(GameObject.FindWithTag("Thymine").transform.position, spawnableObject.transform.position);
-       if(dist<0.25 && dist>=0.20)
-       {
-            if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.1 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.1){
-                pointCounter+=2;
-            }
-            else if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.2 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.2){
-                pointCounter+=1;
-            }
-            else{
-                pointCounter-=1;
-            }        
-       }
-       else{
-        pointCounter-=1;
-       }
-       poinstScored_text.SetText("Points Scored: "+pointCounter);
-       pointObject.GetComponent<Score>().pointCounter = pointCounter;
+        SpawnStrand(thymine_material, "Thymine");
     }
 
     public void SpawnStrandG()
     {
-        GameObject pointObject = GameObject.FindWithTag("ScoreKeeper");
-        GameObject poinstScored_text_object = GameObject.FindWithTag("PointScore");
-        poinstScored_text = poinstScored_text_object.GetComponent<TextMeshProUGUI>();
-
-        pointCounter = pointObject.GetComponent<Score>().pointCounter;
-
-       spawnableObject = GameObject.FindWithTag("Empty");
-       spawnableObject.GetComponent<Renderer>().material = guanine_material;
-       spawnableObject.tag = "Untagged";
-
-       float dist = Vector3.Distance(GameObject.FindWithTag("Guanine").transform.position, spawnableObject.transform.position);
-       if(dist<0.25 && dist>=0.20)
-       {
-            if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.1 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.1){
-                pointCounter+=2;
-            }
-            else if(spawnableObject.transform.position.y <= GameObject.FindWithTag("StrandCollider").transform.position.y+0.2 && spawnableObject.transform.position.y >= GameObject.FindWithTag("StrandCollider").transform.position.y-0.2){
-                pointCounter+=1;
-            }
-            else{
-                pointCounter-=1;
-            }        
-       }
-       else{
-        pointCounter-=1;
-       }
-       poinstScored_text.SetText("Points Scored: "+pointCounter);
-       pointObject.GetComponent<Score>().pointCounter = pointCounter;
+        SpawnStrand(guanine_material, "Guanine");
     }
 
 }
