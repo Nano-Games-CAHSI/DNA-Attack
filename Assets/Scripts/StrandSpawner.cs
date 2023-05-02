@@ -154,6 +154,8 @@ public class StrandSpawner : MonoBehaviour
         Destroy(GameObject.FindWithTag("StrandSpawnCanvas"), 4);
         Destroy(GameObject.FindWithTag("MatchLeft"), 4);
         Destroy(GameObject.FindWithTag("MatchRight"), 4);
+        Destroy(GameObject.FindWithTag("StrandSideLeft"), 4);
+        Destroy(GameObject.FindWithTag("StrandSideRight"), 4);
        }
     }
 

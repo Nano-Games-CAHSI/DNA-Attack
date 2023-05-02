@@ -130,9 +130,10 @@ MonoBehaviour:
   cytosine: {fileID: 4286791370536268146, guid: 7d1af809655cf09479492596caa33a34,
     type: 3}
   guanine: {fileID: 1457970752107504619, guid: 852cfefaa1de17a4db1ebcdbb175015f, type: 3}
-  color_green: {r: 0, g: 1, b: 0, a: 1}
-  color_yellow: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  color_red: {r: 0, g: 0, b: 0, a: 0}
+  adeine_material: {fileID: 2100000, guid: 220e836f570bf5a49961c09b87f2a34f, type: 2}
+  thymine_material: {fileID: 2100000, guid: 47f0e0a9093dae744b2658f550e02ce9, type: 2}
+  cytosine_material: {fileID: 2100000, guid: 749c13e2d10d3034ca28023bb6c95520, type: 2}
+  guanine_material: {fileID: 2100000, guid: 19ed6f7ccbec453449421e39b9933678, type: 2}
   pointCounter: 0
 --- !u!114 &-8227995620043753090
 MonoBehaviour:

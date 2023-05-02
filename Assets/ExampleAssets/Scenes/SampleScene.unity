@@ -802,7 +802,9 @@ MonoBehaviour:
     type: 3}
   rightMatch: {fileID: 104035817090254827, guid: 2533c87e6b9738640b0c540abb4d2c2a,
     type: 3}
-  spawnSide: {fileID: 1583102858358107627, guid: df45083be506a554bbed45748af7e731,
+  sideLeft: {fileID: 1583102858358107627, guid: df45083be506a554bbed45748af7e731,
+    type: 3}
+  sideRight: {fileID: 964900074976238992, guid: 4081e7445e8654144b232f951de3e1b5,
     type: 3}
 --- !u!4 &191739600
 Transform:
@@ -1483,7 +1485,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

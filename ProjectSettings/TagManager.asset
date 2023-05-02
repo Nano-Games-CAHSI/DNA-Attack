@@ -21,6 +21,9 @@ TagManager:
   - WinManager
   - MatchLeft
   - MatchRight
+  - StrandSide
+  - StrandSideLeft
+  - StrandSideRight
   layers:
   - Default
   - TransparentFX

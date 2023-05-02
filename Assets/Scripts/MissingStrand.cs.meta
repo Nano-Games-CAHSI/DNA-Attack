@@ -8,9 +8,10 @@ MonoImporter:
   - thymine: {instanceID: 0}
   - cytosine: {instanceID: 0}
   - guanine: {instanceID: 0}
-  - color_green: {fileID: 2100000, guid: cbbdaa19c5bc00e42bfae8b5dd929410, type: 2}
-  - color_yellow: {fileID: 2100000, guid: 97d99bcec9831c64bad3f9bfb814be33, type: 2}
-  - color_red: {fileID: 2100000, guid: 8bf1e87cc6f42744a910a92e2754e2fd, type: 2}
+  - adeine_material: {fileID: 2100000, guid: 220e836f570bf5a49961c09b87f2a34f, type: 2}
+  - thymine_material: {fileID: 2100000, guid: 47f0e0a9093dae744b2658f550e02ce9, type: 2}
+  - cytosine_material: {fileID: 2100000, guid: 749c13e2d10d3034ca28023bb6c95520, type: 2}
+  - guanine_material: {fileID: 2100000, guid: 19ed6f7ccbec453449421e39b9933678, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

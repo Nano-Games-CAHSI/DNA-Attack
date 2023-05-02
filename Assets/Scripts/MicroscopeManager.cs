@@ -30,7 +30,9 @@ public class MicroscopeManager : MonoBehaviour
     [SerializeField]
     GameObject rightMatch;
     [SerializeField]
-    GameObject spawnSide;
+    GameObject sideLeft;
+    [SerializeField]
+    GameObject sideRight;
 
     List<ARRaycastHit> m_Hits = new List<ARRaycastHit>();
     Camera arCamera;
@@ -97,8 +99,8 @@ public class MicroscopeManager : MonoBehaviour
     }
 
     public void SpawnStrandSides(Vector3 spawnPosition){
-        spawnSideLeft = Instantiate(spawnSide, new Vector3(spawnPosition.x-0.2f, spawnPosition.y-spawnPosition.y/2-0.25125f, spawnPosition.z), Quaternion.identity);
-        spawnSideRight = Instantiate(spawnSide, new Vector3(spawnPosition.x+0.2f, spawnPosition.y-spawnPosition.y/2-0.25125f, spawnPosition.z), Quaternion.identity);
+        spawnSideLeft = Instantiate(sideLeft, new Vector3(spawnPosition.x-0.2f, spawnPosition.y-spawnPosition.y/2-0.25125f, spawnPosition.z), Quaternion.identity);
+        spawnSideRight = Instantiate(sideRight, new Vector3(spawnPosition.x+0.2f, spawnPosition.y-spawnPosition.y/2-0.25125f, spawnPosition.z), Quaternion.identity);
     }
 
 
